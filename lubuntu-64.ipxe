@@ -1,0 +1,8 @@
+#!ipxe
+
+set server_ip 192.168.0.103
+set nfs_path /export/ubuntu-15.04-desktop-amd64
+kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz.efi || read void
+initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
+imgargs vmlinuz.efi root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
+boot || read void

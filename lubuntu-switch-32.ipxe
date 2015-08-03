@@ -1,5 +1,5 @@
 #!ipxe
-
+# to be used on my internal network switch
 set server_ip 10.42.0.1
 set nfs_path /export/lubuntu-15.04-desktop-i386
 kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz || read void
