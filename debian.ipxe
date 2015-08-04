@@ -25,4 +25,3 @@ boot
 
 :debian_exit
 clear menu
-chain linux.ipxe

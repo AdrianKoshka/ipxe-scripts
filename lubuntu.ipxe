@@ -46,6 +46,6 @@ kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz.efi || read void
 initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
 imgargs vmlinuz.efi root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
 boot || read void
+
 :lubuntu_exit
 clear menu
-chain linux.ipxe
