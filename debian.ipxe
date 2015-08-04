@@ -1,0 +1,27 @@
+#!ipxe
+
+goto debian
+
+:debian
+set os debian
+menu debian
+item Debian8_x86 Debian 8 32-bit net install
+item Debian8_x86_64 Debian 8 64-bit net install
+choose version || goto debian_exit
+goto ${version}
+
+:Debian8_x86
+echo Booting Debian 8 32-bit
+kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux
+initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
+boot
+
+:Debian8_x86_64
+echo Booting Debian 8 64-bit
+kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux
+initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot
+
+:debian_exit
+clear menu
+chain linux.ipxe

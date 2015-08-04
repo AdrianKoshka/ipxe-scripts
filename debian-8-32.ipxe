@@ -1,5 +1,0 @@
-#!ipxe
-
-kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux
-initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
-boot

@@ -1,5 +1,0 @@
-#!ipxe
-
-kernel http://mirrors.gigenet.com/centos/6.6/os/i386/images/pxeboot/vmlinuz
-initrd http://mirrors.gigenet.com/centos/6.6/os/i386/images/pxeboot/initrd.img
-boot
