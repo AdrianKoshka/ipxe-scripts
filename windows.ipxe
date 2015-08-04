@@ -1,20 +1,25 @@
 #!ipxe
 
-goto debian
+goto windows
 
-:debian
+:windows
+set server_ip 10.0.0.9
+set nfs_path /nfs/win7
 console --picture http://boot.ipxe.org/ipxe.png
 set os windows7
 menu Windows 7
 item Win7HP64 Windows 7 Home Premium 64-bot
 #item Debian8_x86_64 Debian 8 64-bit net install
-choose version || goto debian_exit
+choose version || goto windows_exit
 goto ${version}
 
 
 :Win7HP64
-kernel nfs://10.0.0.9/win7/wimboot
-initrd nfs://10.0.0.9/win7/boot/bcd         BCD
-initrd nfs://10.0.0.9/win7/boot/boot.sdi    boot.sdi
-initrd nfs://10.0.0.9/win7/sources/boot.wim boot.wim
+kernel nfs://${server_ip}${nfs_path}/wimboot
+initrd nfs://${server_ip}${nfs_path}/boot/bcd
+initrd nfs://${server_ip}${nfs_path}/boot.sdi
+initrd nfs://${server_ip}${nfs_path}/sources/boot.wim
 boot
+
+:lubuntu_exit
+clear menu
