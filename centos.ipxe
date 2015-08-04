@@ -3,6 +3,8 @@
 goto centos
 
 :centos
+console --picture http://boot.ipxe.org/ipxe.png
+
 set os centos
 menu centos
 item centos6_x86 CentOS 6.6 32-bit

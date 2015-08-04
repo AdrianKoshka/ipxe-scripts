@@ -3,6 +3,7 @@
 goto debian
 
 :debian
+console --picture http://boot.ipxe.org/ipxe.png
 set os debian
 menu debian
 item Debian8_x86 Debian 8 32-bit net install

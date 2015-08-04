@@ -3,6 +3,7 @@
 goto lubuntu
 
 :lubuntu
+console --picture http://boot.ipxe.org/ipxe.png
 set os lubuntu
 menu lubuntu
 item lubuntu-x86-15.04 Lubuntu 15.04 32-bit
