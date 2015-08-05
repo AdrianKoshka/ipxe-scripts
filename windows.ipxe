@@ -8,7 +8,7 @@ set nfs_path /nfs/win7
 console --picture http://boot.ipxe.org/ipxe.png
 set os windows7
 menu Windows 7
-item Win7HP64 Windows 7 Home Premium 64-bot
+item Win7HP64 Windows 7 Home Premium 64-bit
 #item Debian8_x86_64 Debian 8 64-bit net install
 choose version || goto windows_exit
 goto ${version}
