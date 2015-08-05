@@ -4,7 +4,7 @@ goto windows
 
 :windows
 set server_ip 10.0.0.9
-set nfs_path /nfs/win7
+set http_path /win7
 console --picture http://boot.ipxe.org/ipxe.png
 set os windows7
 menu Windows 7
@@ -15,10 +15,11 @@ goto ${version}
 
 
 :Win7HP64
-kernel nfs://${server_ip}${nfs_path}/wimboot
-initrd nfs://${server_ip}${nfs_path}/boot/bcd
-initrd nfs://${server_ip}${nfs_path}/boot.sdi
-initrd nfs://${server_ip}${nfs_path}/sources/boot.wim
+kernel wimboot
+initrd bootmgr
+initrd boot/bcd BCD
+initrd boot/boot.sdi boot.sdi
+initrd sources/boot.wim boot.wim
 boot
 
 :windows_exit
