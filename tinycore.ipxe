@@ -1,0 +1,5 @@
+#!ipxe
+kernel http://distro.ibiblio.org/tinycorelinux/6.x/x86/release/distribution_files/vmlinuz
+initrd http://distro.ibiblio.org/tinycorelinux/6.x/x86/release/distribution_files/core.gz
+initrd http://distro.ibiblio.org/tinycorelinux/6.x/x86/release/distribution_files/rootfs.gz
+boot
