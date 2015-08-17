@@ -19,7 +19,7 @@ boot
 
 
 :centos7_x86_64
-kernel http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/vmlinuz
+kernel http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirrors.gigenet.com/centos/7/os/x86_64
 initrd http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot
 
