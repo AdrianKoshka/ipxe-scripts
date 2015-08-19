@@ -1,0 +1,8 @@
+#!ipxe
+
+set protocol http
+set server_ip 192.168.0.103
+
+kernel ${protocol}://${server_ip}/files/pwrch/vmlinuz
+initrd ${protocol}://${server_ip}/files/pwrch/initrd.cgz
+boot || read void
