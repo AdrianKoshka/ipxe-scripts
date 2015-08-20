@@ -1,0 +1,10 @@
+#!ipxe
+  
+set protocol http
+set server_ip 192.168.1.9
+set trk_iso trinity-rescue-kit.3.4-build-372.iso
+  
+kernel ${protocol}://${server_ip}/syslinux-6.03/memdisk || read void
+initrd ${protocol}://${server_ip}/files/${trk_iso} || read void
+imgargs memdisk iso raw || read void
+boot || read void
