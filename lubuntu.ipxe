@@ -6,42 +6,42 @@ goto lubuntu
 console --picture http://boot.ipxe.org/ipxe.png
 set os lubuntu
 menu lubuntu
-item lubuntu-x86-15.04 Lubuntu 15.04 32-bit
-item lubuntu-x86_64 Lubntu 15.04 64-bit
-item lubuntu-x86-15.04-switch Lubuntu 15.04 32-bit (switch)
-item lubuntu-x86_64-15.04-switch Lubuntu 15.04 64-bit (switch)
+item lubuntu-x86-15.10 Lubuntu 15.10 32-bit
+item lubuntu-x86_64 Lubntu 15.10 64-bit
+item lubuntu-x86-15.10-switch Lubuntu 15.10 32-bit (switch)
+item lubuntu-x86_64-15.10-switch Lubuntu 15.10 64-bit (switch)
 choose version || goto lubuntu_exit
 goto ${version}
 
-:lubuntu-x86-15.04
+:lubuntu-x86-15.10
 set server_ip 192.168.0.103
-set nfs_path /export/lubuntu-15.04-desktop-i386
+set nfs_path /export/lubuntu-15.10-desktop-i386
 kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz || read void
 initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
 imgargs vmlinuz root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
 boot || read void
 
 :lubuntu-x86_64
-echo Booting Lubuntu 15.04 64-bit
+echo Booting Lubuntu 15.10 64-bit
 set server_ip 192.168.0.103
-set nfs_path /export/ubuntu-15.04-desktop-amd64
+set nfs_path /export/ubuntu-15.10-desktop-amd64
 kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz.efi || read void
 initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
 imgargs vmlinuz.efi root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
 boot || read void
 
-:lubuntu-x86-15.04-switch
+:lubuntu-x86-15.10-switch
 set server_ip 10.42.0.1
-set nfs_path /export/lubuntu-15.04-desktop-i386
+set nfs_path /export/lubuntu-15.10-desktop-i386
 kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz || read void
 initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
 imgargs vmlinuz root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
 boot || read void
 
-:lubuntu-x86_64-15.04-switch
-echo Booting Lubuntu 15.04 64-bit
+:lubuntu-x86_64-15.10-switch
+echo Booting Lubuntu 15.10 64-bit
 set server_ip 10.42.0.1
-set nfs_path /export/ubuntu-15.04-desktop-amd64
+set nfs_path /export/ubuntu-15.10-desktop-amd64
 kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz.efi || read void
 initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
 imgargs vmlinuz.efi root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
