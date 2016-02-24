@@ -1,0 +1,20 @@
+#!ipxe
+
+menu Windows PE
+item --gap --             ------------------------- Options --------------------------------
+item boot_winpe	Boot
+item goback Go back to previous menu
+choose version
+goto ${version}
+
+
+:boot_winpe
+cpuid --ext 29 && set arch amd64 || set arch x86
+kernel wimboot
+initrd ${arch}/media/Boot/BCD                     BCD
+initrd ${arch}/media/Boot/boot.sdi                boot.sdi
+initrd ${arch}/media/sources/boot.wim             boot.wim
+boot
+
+:goback
+chain http://adriankoshka.xyz/boot/menu.ipxe
