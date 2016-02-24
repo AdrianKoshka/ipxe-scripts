@@ -10,6 +10,9 @@ item fsrvx86 Fedora Server x86
 item --gap --             ------------------------- x86_64 Options -------------------------------
 item fwstx86_64 Fedora Workstation x86_64
 item fsrvx86_64 Fedora Server x86_64
+item --gap --             ---------------------------- Options -----------------------------------
+item goback Go back to previous menu
+
 choose version || goto fedora_exit
 goto ${version}
 
@@ -33,8 +36,11 @@ kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/im
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/images/pxeboot/initrd.img
 boot
 
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
+
 :fedora_exit
 clear menu
 clear kernel
 clear initrd
-
+exit

@@ -1,0 +1,29 @@
+#!ipxe
+
+goto start
+
+:start
+menu Linux
+item --gap --             ------------------------- Choose a distro ------------------------------
+item cnt CentOS
+item deb Debian
+item fed Fedora
+item --gap --             ---------------------------- Options -----------------------------------
+item goback Go Back to previous menu
+choose version || goto cancel
+goto ${version}
+
+:cnt
+chain http://adriankoshka.xyz/boot/linux/centos.ipxe
+
+:deb
+chain http://adriankoshka.xyz/boot/linux/debian.ipxe
+
+:fed
+chain http://adriankoshka.xyz/boot/linux/fedora.ipxe
+
+:goback
+chain http://adriankoshka.xyz/boot/menu.ipxe
+
+:cancel
+exit

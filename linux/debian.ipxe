@@ -3,11 +3,14 @@
 goto debian
 
 :debian
-console --picture http://boot.ipxe.org/ipxe.png
+#console --picture http://boot.ipxe.org/ipxe.png
 set os debian
 menu debian
+item --gap --             -------------------------- Arch ----------------------------------
 item Debian8_x86 Debian 8 32-bit net install
 item Debian8_x86_64 Debian 8 64-bit net install
+item --gap --             ------------------------- Options --------------------------------
+item goback Go back to previous menu
 choose version || goto debian_exit
 goto ${version}
 
@@ -22,6 +25,9 @@ echo Booting Debian 8 64-bit
 kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux keymap=us language=en country=US locale=en_US.UTF-8
 initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 boot
+
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
 
 :debian_exit
 clear menu

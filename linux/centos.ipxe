@@ -11,6 +11,9 @@ item centos6_x86 CentOS 6 32-bit
 item centos6_x86_64 Centos 6 64-bit
 item --gap --             ------------------------- CentOS 7 -------------------------------
 item centos7_x86_64 CentOS 7 64-bit
+item --gap --             ------------------------- Options --------------------------------
+item goback Go back to previous menu
+
 choose version || goto centos_exit
 goto ${version}
 
@@ -28,6 +31,9 @@ boot
 kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/7/os/x86_64/ inst.ks=http://192.168.0.22/boot/kvm.cfg
 initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot
+
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
 
 :centos_exit
 clear menu

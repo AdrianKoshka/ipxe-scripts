@@ -1,0 +1,20 @@
+#!ipxe
+
+goto start
+
+:start
+menu IPXE boot menu
+item --gap --             ------------------------- Operating systems ------------------------------
+item --key l linux	Choose a Linux Distrobution
+item --key w winpe	Boot to Windows PE
+choose version || goto cancel
+goto ${version}
+
+:linux
+chain http://192.168.0.22/boot/linux.ipxe
+
+:winpe
+chain http://192.168.0.22/winpe/boot.ipxe
+
+:cancel
+exit
