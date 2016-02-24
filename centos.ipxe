@@ -18,7 +18,6 @@ initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
 boot
 
 :centos6_x86_64
-:centos6_x86
 kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/
 initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
 boot
