@@ -37,7 +37,7 @@ initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/im
 boot
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
 
 :fedora_exit
 clear menu

@@ -33,7 +33,7 @@ initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
 
 :centos_exit
 clear menu

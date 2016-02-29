@@ -1,0 +1,25 @@
+#!ipxe
+
+goto start
+
+:start
+menu RHEL
+item --gap --             --------------------------  RHEL distros: ------------------------------
+item cnt CentOS
+item fed Fedora
+item --gap --             ---------------------------- Options -----------------------------------
+item goback Go Back to previous menu
+choose version || goto cancel
+goto ${version}
+
+:cnt
+chain http://adriankoshka.xyz/boot/linux/rhel/centos.ipxe
+
+:fed
+chain http://adriankoshka.xyz/boot/linux/rhel/fedora.ipxe
+
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
+
+:cancel
+exit
