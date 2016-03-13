@@ -1,0 +1,27 @@
+#!ipxe
+
+set os ubuntu
+menu ubuntu
+item --gap --             -------------------------- Arch ----------------------------------
+item ubuntu_x86_64 Ubuntu 15.10 x86_64
+item ubuntu_x86 Ubuntu 15.10 x86
+item --gap --             ------------------------- Options --------------------------------
+item goback Go back to previous menu
+choose version || goto ubuntu_exit
+goto ${version}
+
+:ubuntu_exit
+clear menu
+
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
+
+:ubuntu_x86
+kernel http://archive.ubuntu.com/ubuntu/dists/wily/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux
+initrd http://archive.ubuntu.com/ubuntu/dists/wily/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz
+boot
+
+:ubuntu_x86_64
+kernel http://archive.ubuntu.com/ubuntu/dists/wily/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux
+initrd http://archive.ubuntu.com/ubuntu/dists/wily/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz
+boot
