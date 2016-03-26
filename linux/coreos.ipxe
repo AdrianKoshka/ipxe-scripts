@@ -1,6 +1,0 @@
-#!ipxe
-
-set base-url http://stable.release.core-os.net/amd64-usr/current
-kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url=https://gist.githubusercontent.com/AdrianKoshka/1715d8f5fdcddf5e2f2b/raw/1eb1bdeb7ced5f9ba165c4d7ebf4098cb3388b9a/cloud-config.yaml
-initrd ${base-url}/coreos_production_pxe_image.cpio.gz
-boot
