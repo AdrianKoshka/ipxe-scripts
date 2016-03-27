@@ -7,28 +7,34 @@ goto centos
 set os centos
 menu centos
 item --gap --             ------------------------- CentOS 6 -------------------------------
-item centos6_x86 CentOS 6 32-bit
-item centos6_x86_64 Centos 6 64-bit
+item c6_x86 CentOS 6 32-bit
+item c6_x86_64 Centos 6 64-bit
 item --gap --             ------------------------- CentOS 7 -------------------------------
-item centos7_x86_64 CentOS 7 64-bit
+item c7_x86_64 CentOS 7 64-bit
+item c7-kvm CentOS 7 64-bit KVM
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 
 choose version || goto centos_exit
 goto ${version}
 
-:centos6_x86
+:c6_x86
 kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/
 initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
 boot
 
-:centos6_x86_64
+:c6_x86_64
 kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/
 initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
 boot
 
-:centos7_x86_64
+:c7_x86_64
 kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/7/os/x86_64/
+initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
+boot
+
+:c7-kvm
+kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/7/os/x86_64/ ks=http://adriankoshka.xyz/boot/auto-ks.cfg
 initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot
 
