@@ -30,9 +30,9 @@ kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http
 initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
 boot
 
-:c6_x86_64-kvm
-kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/ ks=http://adriankoshka.xyz/boot/c6-base-x86-kvm.cfg
-initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
+:c6_x86-kvm
+kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/ ks=http://adriankoshka.xyz/boot/c6-base-x86-kvm.cfg
+initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
 boot
 
 
