@@ -16,14 +16,14 @@ goto ${version}
 
 :Debian8_x86
 echo Booting Debian 8 32-bit
-kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux keymap=us language=en country=US locale=en_US.UTF-8
-initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
+kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux keymap=us language=en country=US locale=en_US.UTF-8
+initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
 boot
 
 :Debian8_x86_64
 echo Booting Debian 8 64-bit
-kernel http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux keymap=us language=en country=US locale=en_US.UTF-8
-initrd http://mirrors.gigenet.com/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux keymap=us language=en country=US locale=en_US.UTF-8
+initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 boot
 
 :goback
