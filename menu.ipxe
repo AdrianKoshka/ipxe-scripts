@@ -11,10 +11,10 @@ choose version || goto cancel
 goto ${version}
 
 :linux
-chain http://192.168.0.22/boot/linux.ipxe
+chain http://adriankoshka.xyz/boot/linux.ipxe
 
 :winpe
-chain http://192.168.0.22/winpe/boot.ipxe
+chain http://adriankoshka.xyz/winpe/boot.ipxe
 
 :cancel
 exit
