@@ -2,7 +2,7 @@
 
 set target iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl
 set deb NoneTarget
-set cent boop
+set cent booptarget
 
 menu sanboot
 item --gap --             --------------------------- OS -----------------------------------
