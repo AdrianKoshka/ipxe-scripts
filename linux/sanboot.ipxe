@@ -1,8 +1,7 @@
 #!ipxe
 
-set target iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl
-set deb NoneTarget
-set cent booptarget
+set cent iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:NoneTarget
+set deb iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:booptarget
 
 menu sanboot
 item --gap --             --------------------------- OS -----------------------------------
@@ -14,10 +13,10 @@ choose version || goto exit_this_crap
 goto ${version}
 
 :debian8
-sanboot ${target}:${deb}
+sanboot ${deb}
 
 :centos6
-sanboot ${target}:${cent}
+sanboot ${cent}
 
 goback
 chain http://adriankoshka.xyz/boot/linux.ipxe
