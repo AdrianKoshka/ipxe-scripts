@@ -8,6 +8,7 @@ item --gap --             ------------------------- Choose a distro ------------
 item rhel RHEL
 item deb Debian
 item ubu Ubuntu
+item san Sanboot
 item --gap --             ---------------------------- Options -----------------------------------
 item goback Go Back to previous menu
 choose version || goto cancel
@@ -21,6 +22,9 @@ chain http://adriankoshka.xyz/boot/linux/debian.ipxe
 
 :ubu
 chain http://adriankoshka.xyz/boot/linux/ubuntu.ipxe
+
+:san
+chain http://adriankoshka.xyz/boot/linux/sanboot.ipxe
 
 :goback
 chain http://adriankoshka.xyz/boot/menu.ipxe
