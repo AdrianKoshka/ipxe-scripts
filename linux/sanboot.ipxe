@@ -5,7 +5,7 @@ set misc iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:booptarget
 
 menu sanboot
 item --gap --             --------------------------- OS -----------------------------------
-item other Other_OS
+item other misc OS
 item centos6 Centos 6
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
