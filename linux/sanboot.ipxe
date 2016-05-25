@@ -2,15 +2,20 @@
 
 set cent iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:NoneTarget
 set misc iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:booptarget
+set isotarget iscsi:192.168.200.145::::iqn.2016-05.org.freenas.ctl:debtarget
 
 menu sanboot
 item --gap --             --------------------------- OS -----------------------------------
-item other misc OS
+item other Other_OS
 item centos6 Centos 6
+item isboot Debian 8 neboot iso
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 choose version || goto exit_this_crap
 goto ${version}
+
+:isoboot
+sanboot ${isotarget}
 
 :other
 sanboot ${misc}
