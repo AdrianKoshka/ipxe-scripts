@@ -5,14 +5,18 @@ goto start
 :start
 menu Linux
 item --gap --             ------------------------- Choose a distro ------------------------------
-item rhel RHEL
 item deb Debian
+item opnse OpenSUSE
+item rhel RHEL
 item ubu Ubuntu
 item san Sanboot
 item --gap --             ---------------------------- Options -----------------------------------
 item goback Go Back to previous menu
 choose version || goto cancel
 goto ${version}
+
+:opnse
+chain http://adriankoshka.xyz/boot/linux/opensuse.ipxe
 
 :rhel
 chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
