@@ -1,0 +1,5 @@
+#!ipxe
+
+kernel http://mirror.rit.edu/opensuse/distribution/leap/42.1/repo/oss/boot/x86_64/loader/linux splash=silent install=http://mirror.rit.edu/opensuse/distribution/leap/42.1/repo/oss/
+initrd http://mirror.rit.edu/opensuse/distribution/leap/42.1/repo/oss/boot/x86_64/loader/initrd
+boot

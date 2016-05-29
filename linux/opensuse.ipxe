@@ -1,0 +1,25 @@
+#!ipxe
+
+goto start
+
+:start
+menu RHEL
+item --gap --             ------------------------  OpenSUSE distros: ----------------------------
+item leap OpenSUSE Leap
+item stable OpenSUSE Stable
+item --gap --             ---------------------------- Options -----------------------------------
+item goback Go Back to previous menu
+choose version || goto cancel
+goto ${version}
+
+:leap
+chain http://adriankoshka.xyz/boot/linux/opensuse/leap.ipxe
+
+:stable
+chain http://adriankoshka.xyz/boot/linux/opensuse/stable.ipxe
+
+:goback
+chain http://adriankoshka.xyz/boot/linux.ipxe
+
+:cancel
+exit
