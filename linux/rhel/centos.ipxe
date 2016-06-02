@@ -26,8 +26,8 @@ initrd http://192.168.0.22/repo/6/os/i386/images/pxeboot/initrd.img
 boot
 
 :c6_x86_64
-kernel http://192.168.0.22/repo/6.8/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6.8/os/x86_64/
-initrd http://192.168.0.22/repo/6.8/os/x86_64/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/6/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6/os/x86_64/
+initrd http://192.168.0.22/repo/6/os/x86_64/images/pxeboot/initrd.img
 boot
 
 :c6_x86-kvm
