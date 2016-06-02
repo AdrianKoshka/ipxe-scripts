@@ -21,35 +21,35 @@ choose version || goto centos_exit
 goto ${version}
 
 :c6_x86
-kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/
-initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/6/os/i386/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6/os/i386/
+initrd http://192.168.0.22/repo/6/os/i386/images/pxeboot/initrd.img
 boot
 
 :c6_x86_64
-kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/
-initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/6.8/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6.8/os/x86_64/
+initrd http://192.168.0.22/repo/6.8/os/x86_64/images/pxeboot/initrd.img
 boot
 
 :c6_x86-kvm
-kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/ ks=http://adriankoshka.xyz/boot/c6-base-x86-kvm.cfg
-initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/6/os/i386/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6/os/i386/ ks=http://adriankoshka.xyz/boot/c6-base-x86-kvm.cfg
+initrd http://192.168.0.22/repo/6/os/i386/images/pxeboot/initrd.img
 boot
 
 
 :c6_x86_64-kvm
-kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/ ks=http://adriankoshka.xyz/boot/c6-base-kvm.cfg
-initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/6/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/6/os/x86_64/ ks=http://adriankoshka.xyz/boot/c6-base-kvm.cfg
+initrd http://192.168.0.22/repo/6/os/x86_64/images/pxeboot/initrd.img
 boot
 
 
 :c7_x86_64
-kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/7/os/x86_64/
-initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/7/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/7/os/x86_64/
+initrd http://192.168.0.22/repo/7/os/x86_64/images/pxeboot/initrd.img
 boot
 
 :c7-kvm
-kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/7/os/x86_64/ ks=http://adriankoshka.xyz/boot/c7-base.cfg
-initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
+kernel http://192.168.0.22/repo/7/os/x86_64/images/pxeboot/vmlinuz repo=http://192.168.0.22/repo/7/os/x86_64/ ks=http://adriankoshka.xyz/boot/c7-base.cfg
+initrd http://192.168.0.22/repo/7/os/x86_64/images/pxeboot/initrd.img
 boot
 
 :goback
