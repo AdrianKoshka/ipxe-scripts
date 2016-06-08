@@ -7,7 +7,7 @@ menu fedora
 item --gap --             ------------------------- Server -----------------------------------
 item fsrvx86 Fedora Server x86
 item fsrvx86_64 Fedora Server x86_64
-item fsrvx86_64_ks Fedora Server x8_64 (automated kickstarter)
+item fsrvx86_64_ks Fedora Server x86_64 (automated kickstarter)
 item --gap --             ------------------------- Workstation ------------------------------
 item fwstx86 Fedora Workstation x86
 item fwstx86_64 Fedora Workstation x86_64
