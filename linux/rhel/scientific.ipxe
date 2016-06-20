@@ -1,0 +1,40 @@
+#!ipxe
+
+goto scl
+
+:scl
+
+set os scientific
+menu scienfitic
+item --gap --             -------------------- Scientific Linux 6 --------------------------
+item sl6_x86 Scientific Linux 6 32-bit
+item sl6_x86_64 Scientific Linux 6 64-bit
+item --gap --             -------------------- Scientific Linux 7 --------------------------
+item sl7_x86_64 Scientific Linux 7 64-bit
+item --gap --             ------------------------- Options --------------------------------
+item goback Go back to previous menu
+
+choose version || goto centos_exit
+goto ${version}
+
+
+:sl7_x86_64
+kernel http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os
+initrd http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/images/pxeboot/initrd.img
+boot
+
+:sl6_x86_64
+kernel http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os
+initrd http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os/images/pxeboot/initrd.img
+boot
+
+:sl6_x86
+kernel http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os
+initrd http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img
+boot
+
+:goback
+chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
+
+:centos_exit
+clear menu
