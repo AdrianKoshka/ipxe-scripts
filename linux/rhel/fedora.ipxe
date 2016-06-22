@@ -18,28 +18,28 @@ choose version || goto fedora_exit
 goto ${version}
 
 :fwstx86
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/i386/os/
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/i386/os/images/pxeboot/initrd-PAE.img
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/initrd-PAE.img
 boot
 
 :fwstx86_64
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/x86_64/os/
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Workstation/x86_64/os/images/pxeboot/initrd.img
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/initrd.img
 boot
 
 :fsrvx86
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/i386/os/
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/i386/os/images/pxeboot/initrd-PAE.img
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/initrd-PAE.img
 boot
 
 :fsrvx86_64
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/images/pxeboot/initrd.img
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/initrd.img
 boot
 
 :fsrvx86_64_ks
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/ ks=http://192.168.0.22/boot/auto-ks.cfg
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/23/Server/x86_64/os/images/pxeboot/initrd.img
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/ ks=http://192.168.0.22/boot/auto-ks.cfg
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/initrd.img
 boot
 
 
