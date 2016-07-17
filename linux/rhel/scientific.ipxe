@@ -19,17 +19,17 @@ goto ${version}
 
 
 :sl7_x86_64
-kernel http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os
+kernel http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os initrd=initrd.img
 initrd http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/images/pxeboot/initrd.img
 boot
 
 :sl6_x86_64
-kernel http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os
+kernel http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os initrd=initrd.img
 initrd http://ftp.scientificlinux.org/linux/scientific/6.0/x86_64/os/images/pxeboot/initrd.img
 boot
 
 :sl6_x86
-kernel http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os
+kernel http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz repo=http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os initrd.img
 initrd http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img
 boot
 
