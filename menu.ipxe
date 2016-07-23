@@ -7,6 +7,7 @@ menu IPXE boot menu
 item --gap --             ------------------------- Operating systems ------------------------------
 item --key l linux	Choose a Linux Distrobution
 item --key w winpe	Boot to Windows PE
+item --key s shell	Shell
 choose version || goto cancel
 goto ${version}
 
@@ -15,6 +16,9 @@ chain http://adriankoshka.xyz/boot/linux.ipxe
 
 :winpe
 chain http://adriankoshka.xyz/winpe/boot.ipxe
+
+:shell
+shell
 
 :cancel
 exit
