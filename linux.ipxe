@@ -7,7 +7,7 @@ menu Linux
 item --gap --             ------------------------- Choose a distro ------------------------------
 item deb Debian
 item opnse OpenSUSE
-item rhel RHEL
+item rhel Fedora Based
 item ubu Ubuntu
 item san Sanboot
 item --gap --             ---------------------------- Options -----------------------------------
@@ -19,7 +19,7 @@ goto ${version}
 chain http://adriankoshka.xyz/boot/linux/opensuse.ipxe
 
 :rhel
-chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
+chain http://adriankoshka.xyz/boot/linux/fed.ipxe
 
 :deb
 chain http://adriankoshka.xyz/boot/linux/debian.ipxe
