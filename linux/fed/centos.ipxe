@@ -21,22 +21,26 @@ goto ${version}
 :c6_x86
 kernel http://adriankoshka.xyz/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://adriankoshka.xyz/centos/6/os/i386/
 initrd http://adriankoshka.xyz/centos/6/os/i386/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :c6_x86_64
 kernel http://adriankoshka.xyz/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://adriankoshka.xyz/centos/6/os/x86_64/
 initrd http://adriankoshka.xyz/centos/6/os/x86_64/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :c7_x86_64
 kernel http://adriankoshka.xyz/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://adriankoshka.xyz/centos/7/os/x86_64/ inst.sshd initrd=initrd.img
 initrd http://adriankoshka.xyz/centos/7/os/x86_64/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :c7t_x86_64
 kernel http://adriankoshka.xyz/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://adriankoshka.xyz/centos/7/os/x86_64/ inst.sshd inst.text initrd=initrd.img
 initrd http://adriankoshka.xyz/centos/7/os/x86_64/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :goback
 chain http://adriankoshka.xyz/boot/linux/rhel.ipxe

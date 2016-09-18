@@ -19,22 +19,26 @@ goto ${version}
 :fwstx86
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/ initrd=initrd-PAE.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/initrd-PAE.img
-boot
+boot || imgfree
+shell
 
 :fwstx86_64
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/ initrd=initrd.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :fsrvx86
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/ initrd=initrd-PAE.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/initrd-PAE.img
-boot
+boot || imgfree
+shell
 
 :fsrvx86_64
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/ initrd=initrd.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/initrd.img
-boot
+boot || imgfree
+shell
 
 :goback
 chain http://adriankoshka.xyz/boot/linux/rhel.ipxe

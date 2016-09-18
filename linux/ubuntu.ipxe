@@ -19,9 +19,11 @@ chain http://adriankoshka.xyz/boot/linux.ipxe
 :ubuntu_x86
 kernel http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux initrd=initrd.gz
 initrd http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz
-boot
+boot || imgfree
+shell
 
 :ubuntu_x86_64
 kernel http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux initrd=initrd.gz
 initrd http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz
-boot
+boot || imgfree
+shell
