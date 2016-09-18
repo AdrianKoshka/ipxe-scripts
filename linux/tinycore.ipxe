@@ -4,7 +4,7 @@ set os tcl
 menu tcl
 item --gap --             -------------------------- Arch ----------------------------------
 item core32 Tiny Core Linux 32-bit
-item core64 Tiny Core linux 64-bit
+item core64 Tiny Core Linux 64-bit
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 choose version || goto exit
