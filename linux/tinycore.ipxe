@@ -3,8 +3,8 @@
 set os tcl
 menu tcl
 item --gap --             -------------------------- Arch ----------------------------------
-item core32 Tiny Core Linux 32-bit
-item core64 Tiny Core Linux 64-bit
+item core32 Tiny Core Linux
+item core64 Tiny Core Pure64 Linux
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 choose version || goto exit
@@ -16,8 +16,8 @@ boot || imgfree
 shell
 
 :core64
-kernel http://distro.ibiblio.org/tinycorelinux/7.x/x86/release/distribution_files/vmlinuz64 initrd=core.gz
-initrd http://distro.ibiblio.org/tinycorelinux/7.x/x86/release/distribution_files/core.gz
+kernel http://distro.ibiblio.org/tinycorelinux/7.x/x86_64/release/distribution_files/vmlinuz64 initrd=core.gz
+initrd http://distro.ibiblio.org/tinycorelinux/7.x/x86_64/release/distribution_files/corepure64.gz
 boot || imgfree
 shell
 
