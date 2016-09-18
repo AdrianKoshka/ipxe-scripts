@@ -5,6 +5,7 @@ goto start
 :start
 menu Linux
 item --gap --             ------------------------- Choose a distro ------------------------------
+item tcl Tiny Core Linux
 item deb Debian
 item opnse OpenSUSE
 item rhel Fedora Based
@@ -15,14 +16,17 @@ item goback Go Back to previous menu
 choose version || goto cancel
 goto ${version}
 
+:tcl
+chain http://adriankoshka.xyz/boot/linux/tinycore.ipxe
+
+:deb
+chain http://adriankoshka.xyz/boot/linux/debian.ipxe
+
 :opnse
 chain http://adriankoshka.xyz/boot/linux/opensuse.ipxe
 
 :rhel
 chain http://adriankoshka.xyz/boot/linux/fed.ipxe
-
-:deb
-chain http://adriankoshka.xyz/boot/linux/debian.ipxe
 
 :ubu
 chain http://adriankoshka.xyz/boot/linux/ubuntu.ipxe
