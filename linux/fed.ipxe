@@ -4,7 +4,7 @@ goto start
 
 :start
 menu RHEL
-item --gap --             --------------------------  RHEL distros: ------------------------------
+item --gap --             -------------------------  Fedora distros: -----------------------------
 item cnt CentOS
 item fed Fedora
 item scl Scientific Linux
