@@ -43,7 +43,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://mirror.rit.edu/boot/linux/rhel.ipxe
+chain http://mirror.rit.edu/boot/linux/fed.ipxe
 
 :centos_exit
 clear menu
