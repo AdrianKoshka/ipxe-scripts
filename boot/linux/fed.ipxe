@@ -14,16 +14,16 @@ choose version || goto cancel
 goto ${version}
 
 :cnt
-chain http://pi-zero.local/boot/linux/fed/centos.ipxe
+chain http://192.168.0.9/boot/linux/fed/centos.ipxe
 
 :fed
-chain http://pi-zero.local/boot/linux/fed/fedora.ipxe
+chain http://192.168.0.9/boot/linux/fed/fedora.ipxe
 
 :scl
-chain http://pi-zero.local/boot/linux/fed/scientific.ipxe
+chain http://192.168.0.9/boot/linux/fed/scientific.ipxe
 
 :goback
-chain http://pi-zero.local/boot/linux.ipxe
+chain http://192.168.0.9/boot/linux.ipxe
 
 :cancel
 exit

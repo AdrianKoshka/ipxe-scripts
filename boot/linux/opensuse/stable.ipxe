@@ -4,4 +4,4 @@ kernel http://mirror.rit.edu/opensuse/distribution/openSUSE-stable/repo/oss/boot
 initrd http://mirror.rit.edu/opensuse/distribution/openSUSE-stable/repo/oss/boot/x86_64/loader/initrd
 boot || imgfree
 echo -n Boot failed
-chain http://pi-zero.local/boot/linux/opensuse.ipxe
+chain http://192.168.0.9/boot/linux/opensuse.ipxe

@@ -29,7 +29,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://pi-zero.local/boot/linux.ipxe
+chain http://192.168.0.9/boot/linux.ipxe
 
 :debian_exit
 clear menu

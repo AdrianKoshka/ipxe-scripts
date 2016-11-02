@@ -43,7 +43,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://pi-zero.local/boot/linux/rhel.ipxe
+chain http://192.168.0.9/boot/linux/rhel.ipxe
 
 :centos_exit
 clear menu

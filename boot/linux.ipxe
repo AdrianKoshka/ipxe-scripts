@@ -16,25 +16,25 @@ goto ${version}
 
 
 :deb
-chain http://pi-zero.local/boot/linux/debian.ipxe
+chain http://192.168.0.9/boot/linux/debian.ipxe
 
 :opnse
-chain http://pi-zero.local/boot/linux/opensuse.ipxe
+chain http://192.168.0.9/boot/linux/opensuse.ipxe
 
 :fed
-chain http://pi-zero.local/boot/linux/fed.ipxe
+chain http://192.168.0.9/boot/linux/fed.ipxe
 
 :san
-chain http://pi-zero.local/boot/linux/sanboot.ipxe
+chain http://192.168.0.9/boot/linux/sanboot.ipxe
 
 :tcl
-chain http://pi-zero.local/boot/linux/tinycore.ipxe
+chain http://192.168.0.9/boot/linux/tinycore.ipxe
 
 :ubu
-chain http://pi-zero.local/boot/linux/ubuntu.ipxe
+chain http://192.168.0.9/boot/linux/ubuntu.ipxe
 
 :goback
-chain http://pi-zero.local/boot/menu.ipxe
+chain http://192.168.0.9/boot/menu.ipxe
 
 :cancel
 exit

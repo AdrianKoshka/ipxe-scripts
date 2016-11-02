@@ -14,10 +14,10 @@ choose version || goto cancel
 goto ${version}
 
 :linux
-chain http://pi-zero.local/boot/linux.ipxe
+chain http://192.168.0.9/boot/linux.ipxe
 
 :winpe
-chain http://pi-zero.local/winpe/boot.ipxe
+chain http://192.168.0.9/winpe/boot.ipxe
 
 :shell
 shell

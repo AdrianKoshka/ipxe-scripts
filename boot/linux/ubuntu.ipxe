@@ -14,7 +14,7 @@ goto ${version}
 clear menu
 
 :goback
-chain http://pi-zero.local/boot/linux.ipxe
+chain http://192.168.0.9/boot/linux.ipxe
 
 :ubuntu_x86
 kernel http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux initrd=initrd.gz

@@ -13,10 +13,10 @@ goto ${version}
 
 
 :stable
-chain http://pi-zero.local/boot/linux/opensuse/stable.ipxe
+chain http://192.168.0.9/boot/linux/opensuse/stable.ipxe
 
 :goback
-chain http://pi-zero.local/boot/linux.ipxe
+chain http://192.168.0.9/boot/linux.ipxe
 
 :cancel
 exit
