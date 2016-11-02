@@ -5,18 +5,18 @@ goto start
 :start
 menu RHEL
 item --gap --             ------------------------  OpenSUSE distros: ----------------------------
-item stable OpenSUSE Leap Stable
+item --key o stable (O)penSUSE Leap Stable
 item --gap --             ---------------------------- Options -----------------------------------
-item goback Go Back to previous menu
+item --key g goback (G)o Back to previous menu
 choose version || goto cancel
 goto ${version}
 
 
 :stable
-chain http://adriankoshka.xyz/boot/linux/opensuse/stable.ipxe
+chain http://pi-zero.local/boot/linux/opensuse/stable.ipxe
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://pi-zero.local/boot/linux.ipxe
 
 :cancel
 exit

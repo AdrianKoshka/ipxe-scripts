@@ -3,8 +3,8 @@
 set os ubuntu
 menu ubuntu
 item --gap --             -------------------------- Arch ----------------------------------
-item ubuntu_x86_64 Ubuntu 16.04 x86_64
-item ubuntu_x86 Ubuntu 16.04 x86
+item --key 6 ubuntu_x86_64 Ubuntu 16.04 x86_(6)4
+item --key 8 ubuntu_x86 Ubuntu 16.04 x(8)6
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 choose version || goto ubuntu_exit
@@ -14,7 +14,7 @@ goto ${version}
 clear menu
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://pi-zero.local/boot/linux.ipxe
 
 :ubuntu_x86
 kernel http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux initrd=initrd.gz
