@@ -5,20 +5,28 @@ goto start
 :start
 menu IPXE boot menu
 item --gap --             ------------------------- Operating systems ------------------------------
-item --key l linux	Choose a Linux Distrobution
-item --key w winpe	Boot to Windows PE
-item --key s shell	Shell
+item --key l linux	Choose a (L)inux Distrobution
+item --key w winpe	Boot to (W)indows PE
+item --gap --             ----------------------------- Utilities ----------------------------------
+item --key s shell	(S)hell
+item --key i san 	(i)SCI/Sanboot
 choose version || goto cancel
 goto ${version}
 
 :linux
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://pi-zero.local/boot/linux.ipxe
 
 :winpe
-chain http://adriankoshka.xyz/winpe/boot.ipxe
+chain http://pi-zero.local/winpe/boot.ipxe
 
 :shell
 shell
+
+:san
+echo -n root-path: && read netX/root-path
+sanhook --drive 0x80 ${netX/root-path}
+sanboot ${netX/root-path} || clear netX/root-path
+goto start
 
 :cancel
 exit

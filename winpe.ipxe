@@ -2,8 +2,8 @@
 
 menu Windows PE
 item --gap --             ------------------------- Options --------------------------------
-item boot_winpe	Boot
-item goback Go back to previous menu
+item --key b boot_winpe	(B)oot
+item --key g goback (G)o back to previous menu
 choose version
 goto ${version}
 

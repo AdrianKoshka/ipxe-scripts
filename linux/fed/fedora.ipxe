@@ -41,7 +41,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://adriankoshka.xyz/boot/linux/rhel.ipxe
+chain http://pi-zero.local/boot/linux/fed.ipxe
 
 :fedora_exit
 clear menu

@@ -4,26 +4,26 @@ goto start
 
 :start
 menu RHEL
-item --gap --             --------------------------  RHEL distros: ------------------------------
-item cnt CentOS
-item fed Fedora
-item scl Scientific Linux
+item --gap --             -------------------------  Fedora distros: -----------------------------
+item --key c cnt (C)entOS
+item --key f fed (F)edora
+item --key s scl (S)cientific Linux
 item --gap --             ---------------------------- Options -----------------------------------
-item goback Go Back to previous menu
+item --key g goback (G)o Back to previous menu
 choose version || goto cancel
 goto ${version}
 
 :cnt
-chain http://adriankoshka.xyz/boot/linux/fed/centos.ipxe
+chain http://pi-zero.local/boot/linux/fed/centos.ipxe
 
 :fed
-chain http://adriankoshka.xyz/boot/linux/fed/fedora.ipxe
+chain http://pi-zero.local/boot/linux/fed/fedora.ipxe
 
 :scl
-chain http://adriankoshka.xyz/boot/linux/fed/scientific.ipxe
+chain http://pi-zero.local/boot/linux/fed/scientific.ipxe
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://pi-zero.local/boot/linux.ipxe
 
 :cancel
 exit

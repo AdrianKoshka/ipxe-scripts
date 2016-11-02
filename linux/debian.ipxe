@@ -7,10 +7,10 @@ goto debian
 set os debian
 menu debian
 item --gap --             -------------------------- Arch ----------------------------------
-item Debian8_x86 Debian 8 32-bit net install
-item Debian8_x86_64 Debian 8 64-bit net install
+item --key 3 Debian8_x86 Debian 8 (3)2-bit net install
+item --key 6 Debian8_x86_64 Debian 8 (6)4-bit net install
 item --gap --             ------------------------- Options --------------------------------
-item goback Go back to previous menu
+item --key g goback (G)o back to previous menu
 choose version || goto debian_exit
 goto ${version}
 
@@ -29,7 +29,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://adriankoshka.xyz/boot/linux.ipxe
+chain http://pi-zero.local/boot/linux.ipxe
 
 :debian_exit
 clear menu
