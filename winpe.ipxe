@@ -17,4 +17,4 @@ initrd ${arch}/media/sources/boot.wim             boot.wim
 boot
 
 :goback
-chain http://adriankoshka.xyz/boot/menu.ipxe
+chain http://pi-zero.local/boot/menu.ipxe
