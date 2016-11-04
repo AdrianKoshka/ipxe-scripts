@@ -1,0 +1,29 @@
+#!ipxe
+isset ${server-ip} || set server-ip 192.168.0.9
+goto start
+
+:start
+menu RHEL
+item --gap --             -------------------------  Fedora distros: -----------------------------
+item --key c cnt (C)entOS
+item --key f fed (F)edora
+item --key s scl (S)cientific Linux
+item --gap --             ---------------------------- Options -----------------------------------
+item --key g goback (G)o Back to previous menu
+choose version || goto cancel
+goto ${version}
+
+:cnt
+chain http://${server-ip}/boot/linux/fed/centos.ipxe
+
+:fed
+chain http://${server-ip}/boot/linux/fed/fedora.ipxe
+
+:scl
+chain http://${server-ip}/boot/linux/fed/scientific.ipxe
+
+:goback
+chain http://${server-ip}/boot/linux.ipxe
+
+:cancel
+exit

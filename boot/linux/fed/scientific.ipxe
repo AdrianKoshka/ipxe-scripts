@@ -37,7 +37,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://adriankoshka.xyz/boot/linux/fed.ipxe
+chain http://192.168.0.9/boot/linux/rhel.ipxe
 
 :centos_exit
 clear menu

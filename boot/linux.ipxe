@@ -1,0 +1,40 @@
+#!ipxe
+isset ${server-ip} || set server-ip 192.168.0.9
+goto start
+
+:start
+menu Linux
+item --gap --             ------------------------- Choose a distro ------------------------------
+item --key d deb (D)ebian
+item --key f fed (F)edora Based
+item --key o opnse (O)penSUSE
+item --key u  ubu (U(buntu
+item --gap --             ---------------------------- Options -----------------------------------
+item --key g  goback (G)o Back to previous menu
+choose version || goto cancel
+goto ${version}
+
+
+:deb
+chain http://${server-ip}/boot/linux/debian.ipxe
+
+:opnse
+chain http://${server-ip}/boot/linux/opensuse.ipxe
+
+:fed
+chain http://${server-ip}/boot/linux/fed.ipxe
+
+:san
+chain http://${server-ip}/boot/linux/sanboot.ipxe
+
+:tcl
+chain http://${server-ip}/boot/linux/tinycore.ipxe
+
+:ubu
+chain http://${server-ip}/boot/linux/ubuntu.ipxe
+
+:goback
+chain http://${server-ip}/boot/menu.ipxe
+
+:cancel
+exit

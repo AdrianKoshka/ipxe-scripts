@@ -1,9 +1,10 @@
 #!ipxe
+isset ${server-ip} || set server-ip 192.168.0.9
 
 menu Windows PE
 item --gap --             ------------------------- Options --------------------------------
-item boot_winpe	Boot
-item goback Go back to previous menu
+item --key b boot_winpe	(B)oot
+item --key g goback (G)o back to previous menu
 choose version
 goto ${version}
 
@@ -17,4 +18,4 @@ initrd ${arch}/media/sources/boot.wim             boot.wim
 boot
 
 :goback
-chain http://adriankoshka.xyz/boot/menu.ipxe
+chain http://${server-ip}/boot/menu.ipxe
