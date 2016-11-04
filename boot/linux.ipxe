@@ -1,5 +1,5 @@
 #!ipxe
-
+isset ${server-ip} || set server-ip 192.168.0.9
 goto start
 
 :start
@@ -16,25 +16,25 @@ goto ${version}
 
 
 :deb
-chain http://192.168.0.9/boot/linux/debian.ipxe
+chain http://${server-ip}/boot/linux/debian.ipxe
 
 :opnse
-chain http://192.168.0.9/boot/linux/opensuse.ipxe
+chain http://${server-ip}/boot/linux/opensuse.ipxe
 
 :fed
-chain http://192.168.0.9/boot/linux/fed.ipxe
+chain http://${server-ip}/boot/linux/fed.ipxe
 
 :san
-chain http://192.168.0.9/boot/linux/sanboot.ipxe
+chain http://${server-ip}/boot/linux/sanboot.ipxe
 
 :tcl
-chain http://192.168.0.9/boot/linux/tinycore.ipxe
+chain http://${server-ip}/boot/linux/tinycore.ipxe
 
 :ubu
-chain http://192.168.0.9/boot/linux/ubuntu.ipxe
+chain http://${server-ip}/boot/linux/ubuntu.ipxe
 
 :goback
-chain http://192.168.0.9/boot/menu.ipxe
+chain http://${server-ip}/boot/menu.ipxe
 
 :cancel
 exit

@@ -1,9 +1,9 @@
 #!ipxe
-
+isset ${server-ip} || set server-ip 192.168.0.9
 goto start
 
 :start
-menu RHEL
+menu OpenSUSE
 item --gap --             ------------------------  OpenSUSE distros: ----------------------------
 item --key o stable (O)penSUSE Leap Stable
 item --gap --             ---------------------------- Options -----------------------------------
@@ -13,10 +13,10 @@ goto ${version}
 
 
 :stable
-chain http://192.168.0.9/boot/linux/opensuse/stable.ipxe
+chain http://${server-ip}/boot/linux/opensuse/stable.ipxe
 
 :goback
-chain http://192.168.0.9/boot/linux.ipxe
+chain http://${server-ip}/boot/linux.ipxe
 
 :cancel
 exit

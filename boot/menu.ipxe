@@ -1,5 +1,5 @@
 #!ipxe
-
+set server-ip 192.168.0.9
 goto start
 
 :start
@@ -14,10 +14,10 @@ choose version || goto cancel
 goto ${version}
 
 :linux
-chain http://192.168.0.9/boot/linux.ipxe
+chain http://${server-ip}/boot/linux.ipxe
 
 :winpe
-chain http://192.168.0.9/winpe/boot.ipxe
+chain http://${server-ip}/winpe/boot.ipxe
 
 :shell
 shell

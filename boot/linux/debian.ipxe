@@ -1,10 +1,9 @@
 #!ipxe
-
+isset ${server-ip} || set server-ip 192.168.0.9
 goto debian
 
 :debian
 #console --picture http://boot.ipxe.org/ipxe.png
-set os debian
 menu debian
 item --gap --             -------------------------- Arch ----------------------------------
 item --key 3 Debian8_x86 Debian 8 (3)2-bit net install
@@ -29,7 +28,7 @@ boot || imgfree
 shell
 
 :goback
-chain http://192.168.0.9/boot/linux.ipxe
+chain http://${server-ip}/boot/linux.ipxe
 
 :debian_exit
 clear menu

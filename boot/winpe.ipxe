@@ -1,4 +1,5 @@
 #!ipxe
+isset ${server-ip} || set server-ip 192.168.0.9
 
 menu Windows PE
 item --gap --             ------------------------- Options --------------------------------
@@ -17,4 +18,4 @@ initrd ${arch}/media/sources/boot.wim             boot.wim
 boot
 
 :goback
-chain http://192.168.0.9/boot/menu.ipxe
+chain http://${server-ip}/boot/menu.ipxe

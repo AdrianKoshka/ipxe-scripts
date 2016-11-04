@@ -1,5 +1,5 @@
 #!ipxe
-
+isset ${server-ip} || set server-ip 192.168.0.9
 goto start
 
 :start
@@ -14,16 +14,16 @@ choose version || goto cancel
 goto ${version}
 
 :cnt
-chain http://192.168.0.9/boot/linux/fed/centos.ipxe
+chain http://${server-ip}/boot/linux/fed/centos.ipxe
 
 :fed
-chain http://192.168.0.9/boot/linux/fed/fedora.ipxe
+chain http://${server-ip}/boot/linux/fed/fedora.ipxe
 
 :scl
-chain http://192.168.0.9/boot/linux/fed/scientific.ipxe
+chain http://${server-ip}/boot/linux/fed/scientific.ipxe
 
 :goback
-chain http://192.168.0.9/boot/linux.ipxe
+chain http://${server-ip}/boot/linux.ipxe
 
 :cancel
 exit
