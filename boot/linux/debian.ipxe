@@ -1,8 +1,7 @@
 #!ipxe
 isset ${server-ip} || set server-ip 192.168.0.9
-goto debian
 
-:debian
+:start
 #console --picture http://boot.ipxe.org/ipxe.png
 menu debian
 item --gap --             -------------------------- Arch ----------------------------------
@@ -10,8 +9,7 @@ item --key 3 Debian8_x86 Debian 8 (3)2-bit net install
 item --key 6 Debian8_x86_64 Debian 8 (6)4-bit net install
 item --gap --             ------------------------- Options --------------------------------
 item --key g goback (G)o back to previous menu
-choose version || goto debian_exit
-goto ${version}
+choose version && goto ${version} || goto start
 
 :Debian8_x86
 echo Booting Debian 8 32-bit
@@ -29,6 +27,3 @@ shell
 
 :goback
 chain http://${server-ip}/boot/linux.ipxe
-
-:debian_exit
-clear menu

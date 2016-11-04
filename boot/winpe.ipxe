@@ -1,12 +1,12 @@
 #!ipxe
 isset ${server-ip} || set server-ip 192.168.0.9
 
+:start
 menu Windows PE
 item --gap --             ------------------------- Options --------------------------------
 item --key b boot_winpe	(B)oot
 item --key g goback (G)o back to previous menu
-choose version
-goto ${version}
+choose version && goto ${version} || goto start
 
 
 :boot_winpe
