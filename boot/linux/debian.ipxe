@@ -1,5 +1,5 @@
 #!ipxe
-isset ${server-ip} || set server-ip 192.168.0.9
+isset ${server-ip} || set server-ip 192.168.0.22
 
 :start
 #console --picture http://boot.ipxe.org/ipxe.png

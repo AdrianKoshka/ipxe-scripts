@@ -1,6 +1,6 @@
 #!ipxe
 
-isset ${server-ip} || set server-ip 192.168.0.9
+isset ${server-ip} || set server-ip 192.168.0.22
 
 :start
 item --gap --             ------------------------- Server -----------------------------------
@@ -40,4 +40,4 @@ boot || imgfree
 shell
 
 :goback
-chain http://192.168.0.9/boot/linux/fed.ipxe
+chain http://${server-ip}/boot/linux/fed.ipxe
