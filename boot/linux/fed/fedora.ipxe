@@ -1,8 +1,8 @@
 #!ipxe
-goto menu_shit
 
-:menu_shit
-set os fedora
+isset ${server-ip} || set server-ip 192.168.0.9
+
+:menu_selection
 menu fedora
 item --gap --             ------------------------- Server -----------------------------------
 item fsrvx86 Fedora Server x86
@@ -13,7 +13,7 @@ item fwstx86_64 Fedora Workstation x86_64
 item --gap --             ------------------------- Options ----------------------------------
 item goback Go back to previous menu
 
-choose version || goto fedora_exit
+choose version || goto menu_selection
 goto ${version}
 
 :fwstx86
@@ -42,9 +42,3 @@ shell
 
 :goback
 chain http://192.168.0.9/boot/linux/fed.ipxe
-
-:fedora_exit
-clear menu
-clear kernel
-clear initrd
-exit
