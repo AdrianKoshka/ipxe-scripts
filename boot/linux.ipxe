@@ -8,7 +8,7 @@ item --gap --             ------------------------- Choose a distro ------------
 item --key d deb (D)ebian
 item --key f fed (F)edora Based
 item --key o opnse (O)penSUSE
-item --key u  ubu (U(buntu
+item --key u  ubu (U)buntu
 item --gap --             ---------------------------- Options -----------------------------------
 item --key g  goback (G)o Back to previous menu
 choose version && goto ${version} || goto start
