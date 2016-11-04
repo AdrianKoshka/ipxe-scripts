@@ -1,9 +1,8 @@
 #!ipxe
-goto menu_shit
 
-:menu_shit
-set os fedora
-menu fedora
+isset ${server-ip} || set server-ip 192.168.0.9
+
+:start
 item --gap --             ------------------------- Server -----------------------------------
 item fsrvx86 Fedora Server x86
 item fsrvx86_64 Fedora Server x86_64
@@ -13,8 +12,8 @@ item fwstx86_64 Fedora Workstation x86_64
 item --gap --             ------------------------- Options ----------------------------------
 item goback Go back to previous menu
 
-choose version || goto fedora_exit
-goto ${version}
+choose version && goto ${version} || goto start
+
 
 :fwstx86
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/ initrd=initrd-PAE.img
@@ -42,9 +41,3 @@ shell
 
 :goback
 chain http://192.168.0.9/boot/linux/fed.ipxe
-
-:fedora_exit
-clear menu
-clear kernel
-clear initrd
-exit

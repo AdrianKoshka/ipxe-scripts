@@ -1,10 +1,8 @@
 #!ipxe
 
-goto centos
+isset ${server-ip} || set server-ip 192.168.0.9
 
-:centos
-
-set os centos
+:start
 menu centos
 item --gap --             ------------------------- CentOS 6 -------------------------------
 item c6_x86 CentOS 6 32-bit
@@ -15,8 +13,7 @@ item c7t_x86_64 Centos 7 64-bit text install
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 
-choose version || goto centos_exit
-goto ${version}
+choose version && goto ${version} || goto start
 
 :c6_x86
 kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/
@@ -43,7 +40,4 @@ boot || imgfree
 shell
 
 :goback
-chain http://192.168.0.9/boot/linux/rhel.ipxe
-
-:centos_exit
-clear menu
+chain http://${server-ip}/boot/linux/rhel.ipxe

@@ -1,6 +1,5 @@
 #!ipxe
-set server-ip 192.168.0.9
-goto start
+isset ${server-ip} || set server-ip 192.168.0.9
 
 :start
 menu IPXE boot menu
@@ -10,8 +9,7 @@ item --key w winpe	Boot to (W)indows PE
 item --gap --             ----------------------------- Utilities ----------------------------------
 item --key s shell	(S)hell
 item --key i san 	(i)SCI/Sanboot
-choose version || goto cancel
-goto ${version}
+choose version && goto ${version} || goto start
 
 :linux
 chain http://${server-ip}/boot/linux.ipxe
@@ -27,6 +25,3 @@ echo -n root-path: && read netX/root-path
 sanhook --drive 0x80 ${netX/root-path}
 sanboot ${netX/root-path} || clear netX/root-path
 goto start
-
-:cancel
-exit

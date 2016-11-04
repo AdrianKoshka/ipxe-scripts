@@ -1,6 +1,5 @@
 #!ipxe
 isset ${server-ip} || set server-ip 192.168.0.9
-goto start
 
 :start
 menu RHEL
@@ -10,8 +9,7 @@ item --key f fed (F)edora
 item --key s scl (S)cientific Linux
 item --gap --             ---------------------------- Options -----------------------------------
 item --key g goback (G)o Back to previous menu
-choose version || goto cancel
-goto ${version}
+choose version && goto ${version} || goto start
 
 :cnt
 chain http://${server-ip}/boot/linux/fed/centos.ipxe
@@ -24,6 +22,3 @@ chain http://${server-ip}/boot/linux/fed/scientific.ipxe
 
 :goback
 chain http://${server-ip}/boot/linux.ipxe
-
-:cancel
-exit

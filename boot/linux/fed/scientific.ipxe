@@ -1,10 +1,8 @@
 #!ipxe
 
-goto scl
+isset ${server-ip} || set server-ip 192.168.0.9
 
-:scl
-
-set os scientific
+:start
 menu scienfitic
 item --gap --             -------------------- Scientific Linux 6 --------------------------
 item sl6_x86 Scientific Linux 6 32-bit
@@ -14,8 +12,7 @@ item sl7_x86_64 Scientific Linux 7 64-bit
 item --gap --             ------------------------- Options --------------------------------
 item goback Go back to previous menu
 
-choose version || goto centos_exit
-goto ${version}
+choose version && goto ${version} || goto start
 
 
 :sl7_x86_64
@@ -37,7 +34,4 @@ boot || imgfree
 shell
 
 :goback
-chain http://192.168.0.9/boot/linux/rhel.ipxe
-
-:centos_exit
-clear menu
+chain http://${server-ip}/boot/linux/fed.ipxe
