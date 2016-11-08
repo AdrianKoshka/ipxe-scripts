@@ -1,5 +1,5 @@
 # ipxe-scripts
-Various chain/boot scripts for ipxe, specific to my [rpi0](https://www.raspberrypi.org/blog/raspberry-pi-zero/)
+Various chain/boot scripts for ipxe
 
 ## Example
 
