@@ -3,41 +3,73 @@
 isset ${server-ip} || set server-ip 192.168.0.9
 
 :start
-item --gap --             ------------------------- Server -----------------------------------
-item fsrvx86 Fedora Server x86
-item fsrvx86_64 Fedora Server x86_64
-item --gap --             ------------------------- Workstation ------------------------------
-item fwstx86 Fedora Workstation x86
-item fwstx86_64 Fedora Workstation x86_64
+menu fedora
 item --gap --             ------------------------- Options ----------------------------------
-item goback Go back to previous menu
+item --key s server Fedora (S)erver
+item --key w workstation Fedora (W)orkstation
+item --key c kickoff (C)ustom Kickstart script
+item --key g goback (G)o back to previous menu
 
 choose version && goto ${version} || goto start
 
+:kickoff
+cpuid --ext 29 && set arch x86_64 || set arch i386 && goto PAE-check
+:non-PAE
+echo -n Server or Workstation: && read ${type}
+echo -n Kickstart location: && read ${scrip-location}
 
-:fwstx86
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/ initrd=initrd-PAE.img
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/initrd-PAE.img
-boot || imgfree
-shell
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/ initrd=initrd.img isnt.ks=${script-location}
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/initrd.img
 
-:fwstx86_64
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/ initrd=initrd.img
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/initrd.img
-boot || imgfree
-shell
+:PAE-check
+cpuid 6 || goto non-PAE
+echo -n Server or Workstation: && read ${type}
+echo -n Kickstart location: && read ${scrip-location}
 
-:fsrvx86
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/ initrd=initrd-PAE.img isnt.ks=${script-location}
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/initrd-PAE.img
+
+
+:server
+menu server
+item --gap --             ------------------------- Server -----------------------------------
+item servx86 Fedora Server x86
+item servx86_64 Fedora Server x86_64
+item --key g goback-start (G)o back to previous menu
+
+choose version && goto ${version} || goto server
+
+:servx86
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/ initrd=initrd-PAE.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/i386/os/images/pxeboot/initrd-PAE.img
-boot || imgfree
-shell
+boot || echo -n Boot failed && goto server
 
-:fsrvx86_64
+
+:servx86_64
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/ initrd=initrd.img
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Server/x86_64/os/images/pxeboot/initrd.img
-boot || imgfree
-shell
+boot || echo -n Boot failed && goto server
+
+:workstation
+menu workstation
+item --gap --             ------------------------- Workstation -------------------------------
+item workx86 Fedora Workstation x86
+item workx86_64 Fedora Workstation x86_64
+item --key g goback-start (G)o back to previous menu
+choose version && goto ${version} || goto workstation
+
+:workx86
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/ initrd=initrd-PAE.img
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/i386/os/images/pxeboot/initrd-PAE.img
+boot || echo -n Boot failed && goto workstation
+
+:workx86_64
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/ initrd=initrd.img
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/Workstation/x86_64/os/images/pxeboot/initrd.img
+boot || echo -n Boot failed && goto workstation
 
 :goback
 chain http://${server-ip}/boot/linux/fed.ipxe
+
+:goback-start
+goto start
