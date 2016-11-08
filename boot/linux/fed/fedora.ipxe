@@ -3,6 +3,7 @@
 isset ${server-ip} || set server-ip adriankoshka.xyz
 
 :start
+menu fedora
 item --gap --             ------------------------- Server -----------------------------------
 item fsrvx86 Fedora Server x86
 item fsrvx86_64 Fedora Server x86_64
