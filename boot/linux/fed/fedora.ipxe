@@ -13,22 +13,15 @@ item --key g goback (G)o back to previous menu
 choose version && goto ${version} || goto start
 
 :kickoff
-cpuid --ext 29 && set arch x86_64 || set arch i386 && goto PAE-check
-:non-PAE
-echo -n Server or Workstation: && read ${type}
-echo -n Kickstart location: && read ${scrip-location}
+cpuid --ext 29 && set arch x86_64 || set arch i386
+echo -n Server or Workstation :
+read edition
+echo -n Kickstart location :
+read script-location
 
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/ initrd=initrd.img isnt.ks=${script-location}
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/initrd.img
-
-:PAE-check
-cpuid 6 || goto non-PAE
-echo -n Server or Workstation: && read ${type}
-echo -n Kickstart location: && read ${scrip-location}
-
-kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/ initrd=initrd-PAE.img isnt.ks=${script-location}
-initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/${type}/${arch}/os/images/pxeboot/initrd-PAE.img
-
+kernel http://mirror.rit.edu/fedora/fedora/linux/releases/24/${edition}/${arch}/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/24/${edition}/${arch}/os/ initrd=initrd.img ip=dhcp ks=${script-location}
+initrd http://mirror.rit.edu/fedora/fedora/linux/releases/24/${edition}/${arch}/os/images/pxeboot/initrd.img
+boot
 
 :server
 menu server
