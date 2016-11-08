@@ -1,6 +1,6 @@
 #!ipxe
 
-isset ${server-ip} || set server-ip adriankoshka.xyz
+isset ${server-ip} || set server-ip 192.168.0.9
 
 :start
 menu fedora
