@@ -40,4 +40,4 @@ boot || imgfree
 shell
 
 :goback
-chain http://mirror.rit.edu/boot/linux/fed.ipxe
+chain http://${server-ip}/boot/linux/fed.ipxe
