@@ -11,9 +11,22 @@ item --gap --             ------------------------- CentOS 7 -------------------
 item c7_x86_64 CentOS 7 64-bit
 item c7t_x86_64 Centos 7 64-bit text install
 item --gap --             ------------------------- Options --------------------------------
-item goback Go back to previous menu
+item --key g goback (G)o back to previous menu
+item --key c ckick (C)ustom Kickstart script
 
 choose version && goto ${version} || goto start
+
+:ckick
+cpuid --ext 29 && set arch x86_64 || set arch i386
+echo -n 6 or 7:
+read release
+echo -n Kickstart location:
+read script-location
+goto ckick-boot
+
+:ckick-boot
+kernel http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/ initrd=initrd.img ip=dhcp inst.ks=${script-location}
+initrd http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/initrd.img
 
 :c6_x86
 kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/
