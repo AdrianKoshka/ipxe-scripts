@@ -25,7 +25,7 @@ read script-location
 goto ckick-boot
 
 :ckick-boot
-kernel http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/ initrd=initrd.img ip=dhcp inst.ks=${script-location}
+kernel http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/${release}/os/${arch}/ initrd=initrd.img ip=dhcp inst.ks=${script-location}
 initrd http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/initrd.img
 boot
 
