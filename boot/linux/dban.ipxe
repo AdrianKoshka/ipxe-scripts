@@ -1,0 +1,127 @@
+#!ipxe
+# these menu entries have been shamelessly taken from dban's isolinux.cfg
+# dban sourcecode can be found on sourceforge:
+# https://sourceforge.net/projects/dban/
+# dban is licensed under GPLv2
+
+isset ${server-ip} || set server-ip adriankoshka.xyz
+set dkrn http://${server-ip}/boot/linux/dban.bzi
+
+:start
+
+menu Dariks Boot and Nuke
+item --gap --             ------------------------ Options --------------------------------
+item autonuke Autonuke
+item dban Dban
+item dod Dod
+item d3p Dod3pass
+item ds Dodshort
+item gm Gutman
+item ops2 Ops2
+item para Paranoid
+item prng Pure RNG
+item quick Quick
+item zero Zero
+item --gap --             --------------------- Troubleshooting ---------------------------
+item noflop No floppy
+item nosilent Non-silent boot
+item noveri No Verfication
+item --gap --             ----------------------- Debugging -------------------------------
+item debug Debug
+item shell Shell
+item verbo Verbose
+item --key g goback (G)o back to previous menu
+choose version && goto ${version} || goto start
+
+
+:autonuke
+kernel ${dkrn} nuke="dwipe --autonuke" silent vga=785
+boot || imgfree
+goto start
+
+:dban
+kernel ${dkrn} nuke="dwipe" silent vga=785
+boot || imgfree
+goto start
+
+:dod
+kernel ${dkrn} nuke="wipe --autonuke --method dod522022m"" silent vga=785
+boot || imgfree
+goto start
+
+:d3p
+kernel ${dkrn} nuke="dwipe --autonuke --method dod3pass" silent vga=785
+boot || imgfree
+goto start
+
+:ds
+kernel ${dkrn} nukke="dwipe --autonuke --method dodshort" silent vga=785
+boot || imgfree
+goto start
+
+:gm
+kernel ${dkrn} nuke="dwipe --autonuke method gutman" silent vga=785
+boot || imgfree
+goto start
+
+:ops2
+kernel ${dkrn} nuke="dwipe --autonuke --method ops2" silent vga=785
+boot || imgfree
+goto start
+
+:para
+kernel ${dkrn} nuke="dwipe --autonuke --method prng --rounds 8 --verify all" silent vga=785
+boot || imgfree
+goto start
+
+:prng
+kernel ${dkrn} nuke="dwipe --autonuke --method prng --rounds 8" silent vga=785
+boot || imgfree
+goto start
+
+:quick
+kernel ${dkrn} nuke="dwipe --autonuke --method quick" silent vga=785
+boot || imgfree
+goto start
+
+:zero 
+kernel ${dkrn} nuke="dwipe 00autonuke --method zero" silent vga=785
+boot || imgfree
+goto start
+
+# Troubleshooting Labels
+
+:noflop
+kernel ${dkrn} nuke="wdipe" floppy=0,16,cmos vga=785
+boot || imgfree
+goto start
+
+:nosilent
+kernel ${dkrn} nuke="dwipe" vga=785
+boot || imgfree
+goto start
+
+:noveri
+kernel ${dkrn} nuke="dwipe --verify off" vga=785
+boot || imgfree
+goto start
+
+# Debugging Labels
+
+:debug
+kernel ${dkrn} nuke="exec /bin/ash" debug 785
+boot || imgfree
+goto start
+
+:shell
+kernel ${dkrn} init=/bin/sh vga=785
+boot || imgfree
+goto start
+
+:verbo
+kernel ${dkrn} nuke="dwipe --method quick" vga=785
+boot || imgfree
+goto start
+
+:goback
+chain http://${server-ip}/boot/linux.ipxe
