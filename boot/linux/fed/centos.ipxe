@@ -9,6 +9,7 @@ item c6_x86 CentOS 6 32-bit
 item c6_x86_64 CentOS 6 64-bit
 item --gap --             ------------------------- CentOS 7 -------------------------------
 item c7_x86_64 CentOS 7 64-bit
+item c7_x86 CentOS 7 32-bit
 item c7t_x86_64 Centos 7 64-bit text install
 item --gap --             ------------------------- Options --------------------------------
 item --key g goback (G)o back to previous menu
@@ -54,8 +55,8 @@ boot || imgfree
 shell
 
 :c7_x86
-kernel
-initrd
+kernel http://mirror.centos.org/altarch/7/os/i386/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=http://mirror.centos.org/altarch/7/os/i386/
+initrd http://mirror.centos.org/altarch/7/os/i386/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
