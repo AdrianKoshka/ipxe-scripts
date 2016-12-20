@@ -23,12 +23,12 @@ echo -n 6 or 7:
 read release
 echo -n Kickstart location:
 read script-location
-iseq ${arch} x86_64 && set repo-url http://mirror.rit.edu/centos/${release}/os/${arch}/ || set repo-url repo=http://mirror.centos.org/altarch/${release}/os/i386
+iseq ${arch} x86_64 && set repo-url mirror.rit.edu/centos/${release}/os/${arch}/ || set repo-url mirror.centos.org/altarch/${release}/os/i386
 goto ckick-boot
 
 :ckick-boot
-kernel http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/vmlinuz repo=${repo-url} initrd=initrd.img ip=dhcp inst.ks=${script-location}
-initrd http://mirror.rit.edu/centos/${release}/os/${arch}/images/pxeboot/initrd.img
+kernel http://${repo-url}/images/pxeboot/vmlinuz repo=http://${repo-url} initrd=initrd.img ip=dhcp inst.ks=${script-location}
+initrd http://${repo-url}/images/pxeboot/initrd.img
 boot
 
 :c6_x86
