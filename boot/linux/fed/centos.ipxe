@@ -53,5 +53,11 @@ initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
+:c7_x86
+kernel
+initrd
+boot || imgfree
+shell
+
 :goback
 chain http://${server-ip}/boot/linux/fed.ipxe
