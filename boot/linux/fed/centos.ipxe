@@ -44,7 +44,7 @@ boot || imgfree
 shell
 
 :c7_x86_64
-kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirror.rit.edu/centos/7/os/x86_64/ inst.sshd initrd=initrd.img
+kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirror.rit.edu/centos/7/os/x86_64/ initrd=initrd.img
 initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot || imgfree
 shell
