@@ -13,15 +13,15 @@ choose version && goto ${version} || goto start
 
 :Debian8_x86
 echo Booting Debian 8 32-bit
-kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux initrd=initrd.gz
-initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
+kernel http://deb.debian.org/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux initrd=initrd.gz
+initrd http://deb.debian.org/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
 boot || imgfree
 goto start
 
 :Debian8_x86_64
 echo Booting Debian 8 64-bit
-kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux initrd=initrd.gz
-initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+kernel http://deb.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux initrd=initrd.gz
+initrd http://deb.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 boot || imgfree
 goto start
 
