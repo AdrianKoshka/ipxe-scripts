@@ -68,3 +68,7 @@ goto start
 
 :goback
 chain http://${server-ip}/boot/linux/debian.ipxe
+
+# Great thanks to antonym of https://www.reversengineered.com for writing a helpful article and code snippet to help me understand webboot!
+# https://www.reversengineered.com/2014/05/17/building-and-booting-debian-live-over-the-network/
+# imgargs and such wouldn't of been possible without stumbling upon this!
