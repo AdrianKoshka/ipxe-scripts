@@ -27,7 +27,7 @@ boot || imgfree
 goto start
 
 :liveboot
-chain http://${server-ip}/boot/deb-weboot.ipxe
+chain http://${server-ip}/boot/linux/deb-webboot.ipxe
 
 :goback
 chain http://${server-ip}/boot/linux.ipxe
