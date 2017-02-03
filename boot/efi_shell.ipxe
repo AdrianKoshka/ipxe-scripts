@@ -1,4 +1,4 @@
-#ipxe
+#!ipxe
 isset ${server-ip} || set server-ip adriankoshka.xyz
 
 :start
