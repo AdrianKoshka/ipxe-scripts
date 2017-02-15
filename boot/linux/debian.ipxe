@@ -2,7 +2,7 @@
 isset ${server-ip} || set server-ip adriankoshka.xyz
 
 :start
-console --picture http://boot.ipxe.org/ipxe.png
+#console --picture http://boot.ipxe.org/ipxe.png
 menu debian
 item --gap --             ---------------------- Net installer -----------------------------
 item --key 3 Debian8_x86 Debian 8 (3)2-bit net install
