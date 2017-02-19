@@ -1,6 +1,6 @@
 #!ipxe
 
-isset ${server-ip} || set server-ip adriankoshka.xyz
+isset ${server-ip} || set server-ip holovex.net
 
 :start
 menu centos
