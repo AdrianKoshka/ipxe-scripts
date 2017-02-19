@@ -28,6 +28,6 @@ boot
 └── winpe.ipxe
 ```
 
-## Auhtors:
+## Auhtors
 
 - [Theodore Seán Tubbs](https://github.com/AdrianKoshka)
