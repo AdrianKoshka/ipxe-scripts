@@ -28,6 +28,11 @@ boot
 └── winpe.ipxe
 ```
 
+## License:
+
+This project is under the [GPLv3](LICENSE) license unless otherwise stated in
+individual files.
+
 ## Auhtors
 
 - [Theodore Seán Tubbs](https://github.com/AdrianKoshka)
