@@ -1,5 +1,5 @@
 #!ipxe
-isset ${server-ip} || set server-ip holovex.net
+isset ${server-ip} || set server-ip boot.holovex.net
 
 kernel http://mirror.rit.edu/opensuse/distribution/openSUSE-stable/repo/oss/boot/x86_64/loader/linux splash=silent install=http://mirror.rit.edu/opensuse/distribution/openSUSE-stable/repo/oss/ initrd=initrd
 initrd http://mirror.rit.edu/opensuse/distribution/openSUSE-stable/repo/oss/boot/x86_64/loader/initrd
