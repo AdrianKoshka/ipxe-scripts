@@ -20,10 +20,10 @@ item --key g goback (G)o back to previous menu
 choose version && goto ${version} || goto start
 
 :586_kern
-chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
 
 :686_kern
-chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
 
 :deb_stan_64
 kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-standard.vmlinuz
