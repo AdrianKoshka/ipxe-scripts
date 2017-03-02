@@ -5,6 +5,8 @@ isset ${server-ip} || set server-ip boot.holovex.net
 #console --picture http://boot.ipxe.org/ipxe.pnga
 menu webboot
 item --gap --             ------------------------- 32-bit --------------------------------
+item 586_kern 586 kernel (non-pae)
+item 686_kern 686 kernel (pae)
 item --gap --             ------------------------- 64-bit --------------------------------
 item deb_stan_64 Debian standard
 item deb_cinn_64 Debian with Cinnamon
@@ -16,6 +18,12 @@ item deb_xfce_64 Debian with XFCE
 item --gap --             ------------------------- Options --------------------------------
 item --key g goback (G)o back to previous menu
 choose version && goto ${version} || goto start
+
+:586_kern
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
+
+:686_kern
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
 
 :deb_stan_64
 kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-standard.vmlinuz
