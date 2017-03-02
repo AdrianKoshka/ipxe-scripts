@@ -13,6 +13,9 @@ boot
 ├── linux
 │   ├── dban.ipxe
 │   ├── debian.ipxe
+│   ├── deb-webboot
+│   │   ├── 586-kern.ipxe
+│   │   └── 686-kern.ipxe
 │   ├── deb-webboot.ipxe
 │   ├── fed
 │   │   ├── centos.ipxe
