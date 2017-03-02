@@ -31,7 +31,11 @@ boot
 └── winpe.ipxe
 ```
 
-## License:
+## Changelog
+
+[CHANGELOG](CHANGELOG.md)
+
+## License
 
 This project is under the [GPLv3](LICENSE) license unless otherwise stated in
 individual files.
