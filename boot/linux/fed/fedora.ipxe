@@ -25,11 +25,12 @@ boot
 :fed-32
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/i386/os/images/pxeboot/vmlinuz-PAE repo=http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/i386/os initrd=initrd-PAE.img ip=dhcp
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/i386/os/images/pxeboot/initrd-PAE.img
-
+boot
 
 :fed-64
 kernel http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/x86_64/os initrd=initrd.img ip=dhcp
 initrd http://mirror.rit.edu/fedora/fedora/linux/releases/25/Everything/x86_64/os/images/pxeboot/initrd.img
+boot
 
 :goback
 chain http://${server-ip}/boot/linux/fed.ipxe
