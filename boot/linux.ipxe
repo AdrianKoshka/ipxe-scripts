@@ -1,11 +1,12 @@
 #!ipxe
-isset ${server-ip} || set server-ip 192.168.0.9
+isset ${server-ip} || set server-ip adriankoshka.xyz
 goto start
 
 :start
 menu Linux
 item --gap --             ------------------------- Choose a distro ------------------------------
 item --key d deb (D)ebian
+item --key b dban Dariks (B)oot and Nuke
 item --key f fed (F)edora Based
 item --key o opnse (O)penSUSE
 item --key u  ubu (U)buntu
@@ -16,6 +17,9 @@ choose version && goto ${version} || goto start
 
 :deb
 chain http://${server-ip}/boot/linux/debian.ipxe
+
+:dban
+chain http://${server-ip}/boot/linux/dban.ipxe
 
 :opnse
 chain http://${server-ip}/boot/linux/opensuse.ipxe

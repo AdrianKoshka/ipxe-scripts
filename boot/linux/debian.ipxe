@@ -1,29 +1,33 @@
 #!ipxe
-isset ${server-ip} || set server-ip 192.168.0.9
+isset ${server-ip} || set server-ip adriankoshka.xyz
 
 :start
 #console --picture http://boot.ipxe.org/ipxe.png
 menu debian
-item --gap --             -------------------------- Arch ----------------------------------
+item --gap --             ---------------------- Net installer -----------------------------
 item --key 3 Debian8_x86 Debian 8 (3)2-bit net install
 item --key 6 Debian8_x86_64 Debian 8 (6)4-bit net install
 item --gap --             ------------------------- Options --------------------------------
+item --key l liveboot (L)iveboot
 item --key g goback (G)o back to previous menu
 choose version && goto ${version} || goto start
 
 :Debian8_x86
 echo Booting Debian 8 32-bit
-kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux initrd=initrd.gz
-initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
+kernel http://deb.debian.org/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/linux initrd=initrd.gz
+initrd http://deb.debian.org/debian/dists/jessie/main/installer-i386/current/images/netboot/debian-installer/i386/initrd.gz
 boot || imgfree
 goto start
 
 :Debian8_x86_64
 echo Booting Debian 8 64-bit
-kernel http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux initrd=initrd.gz
-initrd http://mirror.rit.edu/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+kernel http://deb.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux initrd=initrd.gz
+initrd http://deb.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 boot || imgfree
 goto start
+
+:liveboot
+chain http://${server-ip}/boot/linux/deb-webboot.ipxe
 
 :goback
 chain http://${server-ip}/boot/linux.ipxe

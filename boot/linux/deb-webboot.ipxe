@@ -1,0 +1,82 @@
+#!ipxe
+isset ${server-ip} || set server-ip adriankoshka.xyz
+
+:start
+#console --picture http://boot.ipxe.org/ipxe.pnga
+menu webboot
+item --gap --             ------------------------- 32-bit --------------------------------
+item 586_kern 586 kernel (non-pae)
+item 686_kern 686 kernel (pae)
+item --gap --             ------------------------- 64-bit --------------------------------
+item deb_stan_64 Debian standard
+item deb_cinn_64 Debian with Cinnamon
+item deb_gnom_64 Debian with GNOME
+item deb_kde_64  Debian with KDE
+item deb_lxde_64 Debian with LXDE
+item deb_mate_64 Debian with MATE
+item deb_xfce_64 Debian with XFCE
+item --gap --             ------------------------- Options --------------------------------
+item --key g goback (G)o back to previous menu
+choose version && goto ${version} || goto start
+
+:586_kern
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
+
+:686_kern
+chain http://${serve-ip}/boot/linux/deb-weboot/586-kern.ipxe || goto start
+
+:deb_stan_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-standard.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-standard.initrd.img
+imgargs debian-live-8.7.1-amd64-standard.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-standard.squashfs initrd=debian-live-8.7.1-amd64-standard.initrd.img
+boot || imgfree
+goto start
+
+:deb_cinn_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-cinnamon-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-cinnamon-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-cinnamon-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-cinnamon-desktop.squashfs initrd=debian-live-8.7.1-amd64-cinnamon-desktop.initrd.img
+boot || imgfree
+goto start
+
+:deb_gnom_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-gnome-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-gnome-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-gnome-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-gnome-desktop.squashfs initrd=debian-live-8.7.1-amd64-gnome-desktop.initrd.img
+boot || imgfree
+goto start
+
+:deb_kde_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-kde-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-kde-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-kde-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-kde-desktop.squashfs initrd=debian-live-8.7.1-amd64-kde-desktop.initrd.img
+boot || imgfree
+goto start
+
+:deb_lxde_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-lxde-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-lxde-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-lxde-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-lxde-desktop.squashfs initrd=debian-live-8.7.1-amd64-lxde-desktop.initrd.img
+boot || imgfree
+goto start
+
+:deb_mate_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-mate-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-mate-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-mate-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-mate-desktop.squashfs initrd=debian-live-8.7.1-amd64-mate-desktop.initrd.img
+boot || imgfree
+goto start
+
+:deb_xfce_64
+kernel http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-xfce-desktop.vmlinuz
+module http://mirror.rit.edu/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-xfce-desktop.initrd.img
+imgargs debian-live-8.7.1-amd64-xfce-desktop.vmlinuz boot=live config hooks=filesystem ${conkern} username=live noeject fetch=http://129.21.171.72/debian-cd/current-live/amd64/webboot/debian-live-8.7.1-amd64-xfce-desktop.squashfs initrd=debian-live-8.7.1-amd64-xfce-desktop.initrd.img
+boot || imgfree
+goto start
+
+:goback
+chain http://${server-ip}/boot/linux/debian.ipxe
+
+# Great thanks to antonym of https://www.reversengineered.com for writing a helpful article and code snippet to help me understand webboot!
+# https://www.reversengineered.com/2014/05/17/building-and-booting-debian-live-over-the-network/
+# imgargs and such wouldn't of been possible without stumbling upon this!
