@@ -1,5 +1,5 @@
 #!ipxe
-isset ${server-ip} || set server-ip boot.holovex.net
+isset ${server-ip} || set server-ip adriankoshka.xyz
 
 :start
 menu OpenSUSE
