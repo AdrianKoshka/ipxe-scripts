@@ -8,7 +8,6 @@ item --gap --             ---------------------- Net installer -----------------
 item --key 3 Debian9_x86 Debian 9 (3)2-bit net install
 item --key 6 Debian9_x86_64 Debian 9 (6)4-bit net install
 item --gap --             ------------------------- Options --------------------------------
-item --key l liveboot (L)iveboot
 item --key g goback (G)o back to previous menu
 choose version && goto ${version} || goto start
 
@@ -25,9 +24,6 @@ kernel http://deb.debian.org/debian/dists/stretch/main/installer-amd64/current/i
 initrd http://deb.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 boot || imgfree
 goto start
-
-:liveboot
-chain http://${server-ip}/boot/linux/deb-webboot.ipxe
 
 :goback
 chain http://${server-ip}/boot/linux.ipxe
