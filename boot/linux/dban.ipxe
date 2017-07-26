@@ -4,7 +4,7 @@
 # https://sourceforge.net/projects/dban/
 # dban is licensed under GPLv2
 
-isset ${server-ip} || set server-ip adriankoshka.xyz
+isset ${server-ip} || set server-ip wwww.adriankoshka.xyz
 set dkrn http://${server-ip}/boot/linux/dban.bzi
 
 :start

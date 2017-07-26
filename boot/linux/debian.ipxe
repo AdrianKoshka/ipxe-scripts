@@ -1,5 +1,5 @@
 #!ipxe
-isset ${server-ip} || set server-ip adriankoshka.xyz
+isset ${server-ip} || set server-ip wwww.adriankoshka.xyz
 
 :start
 #console --picture http://boot.ipxe.org/ipxe.png
