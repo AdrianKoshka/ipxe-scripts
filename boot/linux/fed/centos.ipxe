@@ -23,7 +23,7 @@ echo -n 6 or 7:
 read release
 echo -n Kickstart location:
 read script-location
-iseq ${arch} x86_64 && set repo-url mirror.rit.edu/centos/${release}/os/${arch}/ || set repo-url mirror.centos.org/altarch/${release}/os/i386
+iseq ${arch} x86_64 && set repo-url mirrors.gigenet.com/centos/${release}/os/${arch}/ || set repo-url mirror.centos.org/altarch/${release}/os/i386
 goto ckick-boot
 
 :ckick-boot
@@ -32,26 +32,26 @@ initrd http://${repo-url}/images/pxeboot/initrd.img
 boot
 
 :c6_x86
-kernel http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/i386/
-initrd http://mirror.rit.edu/centos/6/os/i386/images/pxeboot/initrd.img
+kernel http://mirrors.gigenet.com/centos/6/os/i386/images/pxeboot/vmlinuz repo=http://mirrors.gigenet.com/centos/6/os/i386/
+initrd http://mirrors.gigenet.com/centos/6/os/i386/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
 :c6_x86_64
-kernel http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirror.rit.edu/centos/6/os/x86_64/
-initrd http://mirror.rit.edu/centos/6/os/x86_64/images/pxeboot/initrd.img
+kernel http://mirrors.gigenet.com/centos/6/os/x86_64/images/pxeboot/vmlinuz repo=http://mirrors.gigenet.com/centos/6/os/x86_64/
+initrd http://mirrors.gigenet.com/centos/6/os/x86_64/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
 :c7_x86_64
-kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirror.rit.edu/centos/7/os/x86_64/ initrd=initrd.img
-initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
+kernel http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirrors.gigenet.com/centos/7/os/x86_64/ initrd=initrd.img
+initrd http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
 :c7t_x86_64
-kernel http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirror.rit.edu/centos/7/os/x86_64/ inst.sshd inst.text initrd=initrd.img
-initrd http://mirror.rit.edu/centos/7/os/x86_64/images/pxeboot/initrd.img
+kernel http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=http://mirrors.gigenet.com/centos/7/os/x86_64/ inst.sshd inst.text initrd=initrd.img
+initrd http://mirrors.gigenet.com/centos/7/os/x86_64/images/pxeboot/initrd.img
 boot || imgfree
 shell
 
