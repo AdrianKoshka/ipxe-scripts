@@ -1,5 +1,5 @@
 #!ipxe
-isset ${server-ip} || set server-ip www.adriankoshka.xyz
+isset ${server-ip} || set server-ip 192.168.0.57
 
 :start
 menu iPXE boot menu
@@ -29,4 +29,3 @@ echo -n root-path: && read netX/root-path
 sanhook --drive 0x80 ${netX/root-path}
 sanboot ${netX/root-path} || clear netX/root-path
 goto start
-

@@ -1,6 +1,6 @@
 #!ipxe
 
-isset ${server-ip} || set server-ip www.adriankoshka.xyz
+isset ${server-ip} || set server-ip 192.168.0.57
 
 :start
 menu scienfitic

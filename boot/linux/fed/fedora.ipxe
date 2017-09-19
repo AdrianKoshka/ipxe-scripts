@@ -1,11 +1,11 @@
 #!ipxe
 
-isset ${server-ip} || set server-ip www.adriankoshka.xyz
+isset ${server-ip} || set server-ip 192.168.0.57
 
 :start
 menu fedora
 item --gap --             ------------------------- Options ----------------------------------
-item fed-32 Fedora 32-bit 
+item fed-32 Fedora 32-bit
 item fed-64 Fedora 64-bit
 item --key c kickoff (C)ustom Kickstart script
 item --key g goback (G)o back to previous menu
