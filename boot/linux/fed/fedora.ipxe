@@ -27,7 +27,7 @@ kernel http://mirror.math.princeton.edu/pub/fedora-secondary/releases/26/Everyth
 initrd http://mirror.math.princeton.edu/pub/fedora-secondary/releases/26/Everything/i386/os/images/pxeboot/initrd-PAE.img
 boot
 
-fed-64
+:fed-64
 kernel http://mirror.cs.princeton.edu/pub/mirrors/fedora/linux/releases/26/Everything/x86_64/os/images/pxeboot/vmlinuz repo=http://mirror.cs.princeton.edu/pub/mirrors/fedora/linux/releases/26/Everything/x86_64/os initrd=initrd.img ip=dhcp
 initrd http://mirror.cs.princeton.edu/pub/mirrors/fedora/linux/releases/26/Everything/x86_64/os/images/pxeboot/initrd.img
 boot
