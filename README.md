@@ -32,6 +32,6 @@ boot
 This project is under the [GPLv3](LICENSE) license unless otherwise stated in
 individual files.
 
-## Auhtors
+## Authors
 
 - [Theodore Seán Tubbs](https://github.com/AdrianKoshka)
